@@ -1,0 +1,21 @@
+#Created by Addison Huschka
+
+#Input
+first_name = input("What is your first name? ")
+last_name = input("What is your last name? ")
+tech_id = input("What is your tech id? ")
+exp_date = input("When does the id expire? ")
+
+#Output
+print(first_name, last_name, tech_id, exp_date)
+print(f"Student info\nYour name: {last_name}, {first_name}\nYour id: {tech_id}\nExperation date: {exp_date}")
+
+#introduction input
+name = input("What is your name? ")
+fav_animal = input("What is your favorite animal? ")
+fav_class = input("What is your favorite class or subject? ")
+fav_color = input("What is your favorite color? ")
+fun_fact = input("Tell me a fun fact: ")
+
+#intro output
+print(f'It is very nice to meet you {name}!\nI would love to hear why {fav_animal} is your favorite.\nAlso, what do you like about {fav_class}?\nI like {fav_color} too!\nYour fun fact is pretty cool!')
