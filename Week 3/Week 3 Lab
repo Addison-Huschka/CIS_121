@@ -9,7 +9,7 @@ if marital_status == "s":
         tax = 1100 + ((earned_income - 11000) *0.12)
         print(f'This year you would owe {tax} in taxes.')
     elif earned_income >= 44726 and earned_income <= 95375:
-        tax = 6467 + ((earned_income - 44725) * 0.22)
+        tax = 5572.5 + ((earned_income - 44725) * 0.22)
         print(f'This year you would owe {tax} in taxes.')
     else:
         print("You make too much for this calculator!")
