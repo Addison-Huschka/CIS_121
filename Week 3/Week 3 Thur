@@ -1,0 +1,26 @@
+standards_met = int(input("How many standards has the student met? "))
+standards_P = int(input("How many standards were evaluated at P? "))
+outcome_zero = int(input("How many outcomes had standards that were all evaluated at 0? "))
+if standards_met >= 51 and standards_met <= 57:
+    if (standards_met == 57) and (standards_P >= 29):
+        print("Grade: A+")
+    elif standards_met >=53:
+        print("Grade: A")
+    else:
+        print("Grade: A-")
+elif (standards_met >= 45) and (outcome_zero == 0):
+    if standards_met >= 49:
+        print("Grade: B+")
+    elif standards_met >= 47:
+        print("Grade: B")
+    else:
+        print("Grade: B-")
+elif (standards_met >= 43) and (outcome_zero == 0):
+        print("Grade: C+")
+elif (standards_met >= 40) or (outcome_zero > 0 and outcome_zero < 4):
+        print("Grade: C")
+else: 
+    if (standards_met >= 35) or (outcome_zero > 0 and outcome_zero < 4):
+        print("Grade: D")
+    elif (standards_met < 35) or (outcome_zero > 3): 
+        print("Grade: F")

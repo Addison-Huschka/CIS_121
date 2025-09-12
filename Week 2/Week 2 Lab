@@ -1,0 +1,7 @@
+#Challenge question
+human_age = float(input("How old is the human? ")) 
+dog_age = 7*human_age
+year = dog_age//1
+month = ((dog_age-year)*12)//1
+day = ((((dog_age-year)*12)-month)*30)//1
+print(f'Your age in dog years is {year} years, {month} months, and {day} days.')

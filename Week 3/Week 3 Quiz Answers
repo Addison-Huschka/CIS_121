@@ -1,0 +1,286 @@
+#1.
+my_var = 3
+if my_var % 2 == 1:
+    if my_var **3 != 27 :
+        my_var = my_var + 4
+    else:
+        my_var /= 1.5
+else:
+    if my_var <= 10:
+        my_var *= 2
+    else:
+        my_var == 2
+print(my_var)
+# 5, 3, 10, 12
+# odd numbers 1, [5,infinity], 3, even numbers [0,10], even numbers [12,infinity]
+
+#2.
+#a is two if statements meaning that if one isn't true the other one will run and if that one isn't true either it is just false
+#b is an if and elif statement meaning that if the first isn't true, then the other will run no matter what
+
+#3.
+light_color = input("What color is the light? ")
+if light_color == "green":
+    print("Go")
+elif light_color == "yellow":
+    print("Yield")
+elif light_color == "red":
+    print("Stop")
+else:
+    print("Color not valid")
+
+#4.
+age = int(input("What is your age? "))
+goal = input("What is your athleticism goal? ")
+if age >=20 and age <= 39:
+    if goal == "Above Average":
+        print("Your resting heart rate should be between 47-72")
+    else:
+        print("Your resting heart rate should be between 73-93")
+elif age >= 40 and age <= 59:
+    if goal == "Above Average":
+        print("Your resting heart rate should be between 46-71")
+    else:
+        print("Your resting heart rate should be between 72-94")
+elif age >= 60 and age <=79:
+    if goal == "Above Average":
+        print("Your resting heart rate should be between 45-70")
+    else: 
+        print("Your resting heart rate should be between 71-97")
+
+#5. 
+num_1 = float(input("Number 1: "))
+num_2 = float(input("Number 2: "))
+num_3 = float(input("Number 3: "))
+if (num_1 < num_2) and (num_1 < num_3):
+    if num_2 < num_3:
+        print(num_1, num_2, num_3)
+    elif num_3 < num_2:
+        print(num_1, num_3, num_2)
+elif (num_2 < num_1) and (num_2 < num_3):
+    if num_1 < num_3:
+        print(num_2, num_1, num_3)
+    elif num_3 < num_1:
+        print(num_2, num_3, num_1)
+elif (num_3 < num_1) and (num_3 < num_2):
+    if num_1 < num_2:
+        print(num_3, num_1, num_2)
+    elif num_2 < num_1:
+        print(num_3, num_2, num_1)
+
+#6.
+num_1 = float(input("Number 1: "))
+num_2 = float(input("Number 2: "))
+num_3 = float(input("Number 3: "))
+if (num_1 > num_2) and (num_1 > num_3):
+    if num_2 > num_3:
+        print(num_1, num_2, num_3)
+    elif num_3 > num_2:
+        print(num_1, num_3, num_2)
+elif (num_2 > num_1) and (num_2 > num_3):
+    if num_1 > num_3:
+        print(num_2, num_1, num_3)
+    elif num_3 > num_1:
+        print(num_2, num_3, num_1)
+elif (num_3 > num_1) and (num_3 > num_2):
+    if num_1 > num_2:
+        print(num_3, num_1, num_2)
+    elif num_2 > num_1:
+        print(num_3, num_2, num_1)
+
+#7. 
+knut = int(input("How many knuts do you have? "))
+sickle = knut // 29
+galleon = sickle // 17
+if knut >= 493:
+    if (knut % 29) > 0:
+        if (sickle % 17) > 0:
+            sickle = sickle % 17
+            knut = knut % 29
+            print(f'{int(galleon)} galleons, {int(sickle)} sickles and {int(knut)} knuts')
+        else:
+            knut = knut % 29
+            print(f'{int(galleon)} galleons and {int(knut)} knuts')
+    elif (knut % 29) == 0:
+        if (sickle % 17) > 0:
+            sickle = sickle % 17
+            print(f'{int(galleon)} galleons and {int(sickle)} sickles')
+        else:
+            print(f'{int(galleon)} galleons')
+elif knut >= 29:
+    if (knut % 29) > 0:
+        knut = knut % 29
+        print(f'{int(sickle)} sickles and {int(knut)} knuts')
+    else:
+        print(f'{int(sickle)} sickles')
+else:
+    print(f'{knut} knuts')
+
+#8. 
+num_1 = float(input("Number 1: "))
+num_2 = float(input("Number 2: "))
+num_3 = float(input("Number 3: "))
+if (num_1 > num_2) and (num_1 > num_3):
+    print(f'The largest number: {num_1}')
+elif (num_2 > num_1) and (num_2 > num_3):
+    print(f'The largest number: {num_2}')
+elif (num_3 > num_1) and (num_3 > num_2):
+    print(f'The largest number: {num_3}')
+
+#9.
+num_1 = float(input("Number 1: "))
+num_2 = float(input("Number 2: "))
+num_3 = float(input("Number 3: "))
+if (num_1 < num_2) and (num_1 < num_3):
+    print(f'The smallest number: {num_1}')
+elif (num_2 < num_1) and (num_2 < num_3):
+    print(f'The smallest number: {num_2}')
+elif (num_3 < num_1) and (num_3 < num_2):
+    print(f'The smallest number: {num_3}')
+
+#10. 
+health_points = -1
+user_class = input("What class is your character? ")
+race = input("What race is your character? ")
+if user_class == "Warrior":
+    if race == "Elf":
+        health_points += 150
+        print(f'Your health points are currently {health_points}')
+    elif race == "Ogre":
+        health_points += 200
+        print(f'Your health points are currently {health_points}')
+elif user_class == "Bard":
+    if race == "Elf":
+        health_points += 75
+        print(f'Your health points are currently {health_points}')
+    elif race == "Ogre":
+        health_points += 100
+        print(f'Your health points are currently {health_points}')
+elif user_class == "Wizard":
+    if race == "Elf":
+        health_points += 25
+        print(f'Your health points are currently {health_points}')
+    elif race == "Ogre":
+        health_points += 50
+        print(f'Your health points are currently {health_points}')
+else:
+    print("That is not a class offered")
+
+#11. 
+from random import randint
+value = randint(0,1)
+print("Heads = 0 and tails = 1")
+guess = int(input("What is your guess for the coin flip? "))
+if guess == value:
+    print("You got it correct!")
+else:
+    print("Sorry you got it worng...")
+
+#12. 
+num_1 = float(input("Number 1: "))
+num_2 = float(input("Number 2: "))
+num_3 = float(input("Number 3: "))
+if (num_1 != num_2) and (num_1 != num_3) and (num_2 != num_3):
+    print("Every number is unique")
+elif (num_1 == num_2) and (num_1 == num_3) and (num_2 == num_3):
+    print("All of your numbers are the same")
+else:
+    print("You entered the same number twice")
+
+#13. 
+highway_number = int(input("Pick a highway number: "))
+if (highway_number % 100) ==  0:
+    print("Invalid highway number")
+elif (highway_number % 2) ==  0:
+    print(f'Highway number {highway_number} runs east/west')
+elif (highway_number % 2) ==  1:
+    print(f'Highway number {highway_number} runs north/south')
+
+#14. 
+letter = input("Enter a letter: ")
+if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
+    print("vowel")
+else:
+    print("consonant")
+
+#15. 
+print("kindergarten = 0")
+grade = int(input("Enter your grade: "))
+time = input("Enter morning or afternoon: ")
+if grade <= 3:
+    if time == "morning":
+        print("The pool is open at 9 AM")
+    elif time == "afternoon":
+        print("The pool is open at 1 PM")
+elif grade <= 8 :
+    if time == "morning":
+        print("The pool is open at 10 AM")
+    elif time == "afternoon":
+        print("The pool is open at 2 PM")
+elif grade <= 12:
+    if time == "morning":
+        print("The pool is open at 11 AM")
+    elif time == "afternoon":
+        print("The pool is open at 3 PM")
+else:
+    print("There is not a time offered")
+
+#16. 
+flavor = input("Pick a flavor: ")
+if flavor == "vanilla":
+    print("Here is your vanilla ice cream!")
+elif flavor == "chocolate":
+    print("Here is your chocolate ice cream!")
+elif flavor == "strawberry":
+    print("Here is your strawberry ice cream!")
+else:
+    print(f'Sorry, we don\'t have {flavor} ice cream.')
+
+#17. 
+player1 = input("Player 1 choice: ")
+player2 = input("Player 2 choice: ")
+if player1 == "rock":
+    if player2 == "scissors":
+        print("Player 1 wins!")
+    elif player2 == "paper":
+        print("Player 2 wins!")
+    else:
+        print("it's a tie")
+elif player1 == "scissors":
+    if player2 == "rock":
+        print("Player 2 wins!")
+    elif player2 == "paper":
+        print("Player 1 wins!")
+    else:
+        print("it's a tie")
+elif player1 == "paper":
+    if player2 == "scissors":
+        print("Player 2 wins!")
+    elif player2 == "rock":
+        print("Player 1 wins!")
+    else:
+        print("it's a tie")
+
+#18. 
+side1 = float(input("Pick side length 1: "))
+side2 = float(input("Pick side length 2: "))
+side3 = float(input("Pick side length 3: "))
+if side1 == side2 and side1 == side3 and side2 == side3:
+    print("Equilateral triangle")
+elif side1 != side2 and side1 != side3 and side2 != side3:
+    print("Scalene triangle")
+else:
+    print("Isosceles triangle")
+
+#19. 
+person = input("Enter name: ")
+if person == "Darth Vader":
+    print("He is your father")
+elif person == "Leia":
+    print("She is your sister")
+elif person == "Han":
+    print("He is your brother-in-law")
+elif person == "R2D2":
+    print("They are your droid")
+else:
+    print("unknown")

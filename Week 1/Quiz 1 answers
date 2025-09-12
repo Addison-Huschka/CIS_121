@@ -1,0 +1,49 @@
+#1
+year = input("Enter year: ") 
+month = input("Enter month: ") 
+day = input("Enter day: ") 
+print(f'The date is {month} {day}, {year}') 
+
+#2
+name = input("Enter your name: ") 
+age = input("Enter your age: ") 
+print(f'Hello {name}! I think being {age} sounds fun!') 
+
+#3
+first_name = input("Enter your first name: ") 
+last_name = input("Enter your last name: ") 
+print(f'Goodbye {first_name} {last_name}. See you later!') 
+
+#4
+first_name = input("Enter your first name: ") 
+last_name = input("Enter your last name: ") 
+print(f'Hello {first_name} {last_name}! It\'s nice to see you!') 
+
+#5
+color = input("Pick a color: ") 
+animal = input("Pick an animal: ") 
+print(f'You picked a {color} {animal}!') 
+
+#6
+food = input("Enter a food: ") 
+drink = input("Enter a drink: ") 
+print(f'Your order is a {food} and a {drink}. Enjoy!') 
+
+#7
+color = input("What\'s your favorite color? ") 
+food = input("What\'s your favorite color? ") 
+print(f'{color} is my favorite too! I also really like {food}!') 
+
+#8
+city = input("What city are you in? ") 
+state = input("What state are you in? ") 
+print(f'You are in {city}, {state}.') 
+
+#9
+x = 3 
+y = 7 
+print(f'here is x: {x} and here is y: {y}') 
+temp = x 
+x = y 
+y = temp 
+print(f'here is x: {x} and here is y: {y}') 

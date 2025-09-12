@@ -1,0 +1,24 @@
+age = int(input("tell my how old you are: "))
+print(f'you are {age} years old.')
+
+age_next_year = age + 1
+print(f'next year you will be {age_next_year}!')
+
+print(8=="8")
+#it will print false because it isn't the same variable type
+
+#Practice question
+#Write your own custom app that can add any two user
+#given numbers and outputs the result.
+user_num1 = float(input("Give me a number: "))
+user_num2 = float(input("Give me another number: "))
+operator = input("pick: + - * / ")
+print(f'Here is the sum of your numbers: {user_num1+user_num2}')
+
+
+import math
+
+#c=2pir
+radius = 5
+circumference = 2 * math.pi * radius
+print(circumference)
