@@ -1,0 +1,24 @@
+'''3 start paths 
+    -Save/find someone
+        -Princess needs saving
+    -Defeat something
+        -Giant
+        -Cyclops
+        -Dragon
+        -other large monster
+    -Steal something (robin hood style)
+        -Gold/money from royals
+        -Diamonds/gemstones from other theives
+start by setting up 3 paths and move on to a name imput, regardless of which was chosen
+'''
+start = input("Hello brave adventurer! Which role would you like?\na. The royal who needs to save the princess from her kidnappers.\nb. The knight who needs to defeat the monster.\nc. The commoner who needs to steal back the treasure from person.\n")
+if start == "a":
+    name = input("\"Hello?\"\nYou look around, not sure who is calling your name.\n\"Yes! You over there!\"\nYou see a young woman in commoners clothing rushing over to you.\n\"Whats your name?\" She asks, very out of breath.\n")
+    print(f'\n\"It is lovely to meet you {name}! You seem of noble blood, will you help us with our problem?\"')
+    input("Press enter to continue. ")
+    print(f'\n\"Oh thank you {name}! Our princess has been kidnapped! She was taken to somewhere and you need to save her.\"\nYou nod and tell her you will and she takes you to the palace, telling you that you will get a map there.')
+if start == "b":
+    name = input()
+
+
+
