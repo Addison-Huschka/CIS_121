@@ -19,7 +19,7 @@ number = 1
 while number <= 10:
     if number % 2 == 0:
         print(number)
-    number += 1'''
+    number += 1
     
 #print odd numbers between 5 and some user given value (inclusivly)
 number = 5
@@ -28,3 +28,31 @@ while number <= user_value:
     if number %2 == 1:
         print(number)
     number += 1
+
+#find the sum of user entered value until user types q (for done)
+total = 0
+user_input = (input("Enter a number or type q to quit: "))
+while user_input != "q":
+    total += int(user_input)
+    user_input = input("Enter a number or type q to quit: ")
+print(f'total = {total}')
+
+total = 0
+user_input = ""
+done = False
+while not done:
+    user_input = input("Enter a number or type q to quit: ")
+    if user_input == "q":
+        done = True
+    else:
+        total += int(user_input)
+print(f'total = {total}')
+
+#print all of the numbers between 1 and 50 that are even but not divisible by three
+number = 0
+while number <= 50:    
+    number += 1
+    if number % 2 == 0:
+        if number % 3 == 0:
+            continue
+        print(number)'''
