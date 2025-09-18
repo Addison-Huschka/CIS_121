@@ -1,4 +1,4 @@
-'''for number in range(1,11):
+for number in range(1,11):
     print(number)
 
 for number in range(2,11,2):
@@ -18,12 +18,12 @@ for number in range(0,10000000000000):
         break
     total += int(user_input)
 print(total)
-'''
-word = "hello world!"
-#print(word[2:8])
 
+word = "hello world!"
+print(word[2:8])
 for letter in word:
     print(letter)
+
 x = 123
 for number in x:
     print(number)
