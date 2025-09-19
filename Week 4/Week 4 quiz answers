@@ -1,0 +1,8 @@
+#1
+total = 0
+larger_int = int(input("Integer 1: "))
+smaller_int = int(input("Integer smaller than integer 1: "))
+while larger_int > smaller_int:
+    larger_int /= 2
+    total += 1
+print(total-1)
