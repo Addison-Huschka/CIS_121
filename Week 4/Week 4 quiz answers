@@ -40,3 +40,14 @@ for number in range(50,517):
 print(total)
 '''
 #6
+total = 0
+user_input = ""
+done = False
+while not done:
+    user_input = int(input("Enter a positive integer or type a negative integer to quit: "))
+    if user_input < 0:
+        done = True
+    else:
+        total += int(user_input)
+print(total)
+
