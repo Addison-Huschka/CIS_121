@@ -11,7 +11,7 @@ print(total-1)
 word = input("Give me a word: ")
 for letter in word[1:1000:2]:
     print(letter, end = "")
-'''
+
 #3
 for number in range(37,1051):
     if number % 2 == 0:
@@ -19,3 +19,19 @@ for number in range(37,1051):
 #or
 for number in range(38,1051,2):
     print(number)
+
+#4
+total = ""
+user_input = ""
+done = False
+while not done:
+    user_input = input("Enter a letter or type done to quit: ")
+    if user_input == "done":
+        done = True
+    else:
+        total += str(user_input)
+print(total)
+'''
+#5
+
+
