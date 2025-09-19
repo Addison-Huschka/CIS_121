@@ -31,11 +31,12 @@ while not done:
     else:
         total += str(user_input)
 print(total)
-'''
+
 #5
 total = 0
 for number in range(50,517):
     if number % 2 == 1:
         total += number
 print(total)
-
+'''
+#6
