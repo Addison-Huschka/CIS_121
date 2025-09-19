@@ -1,4 +1,4 @@
-#1
+'''#1
 total = 0
 larger_int = int(input("Integer 1: "))
 smaller_int = int(input("Integer smaller than integer 1: "))
@@ -6,3 +6,16 @@ while larger_int > smaller_int:
     larger_int /= 2
     total += 1
 print(total-1)
+
+#2
+word = input("Give me a word: ")
+for letter in word[1:1000:2]:
+    print(letter, end = "")
+'''
+#3
+for number in range(37,1051):
+    if number % 2 == 0:
+        print(number)
+#or
+for number in range(38,1051,2):
+    print(number)
