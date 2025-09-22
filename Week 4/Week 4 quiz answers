@@ -1,4 +1,4 @@
-'''#1
+#1
 total = 0
 larger_int = int(input("Integer 1: "))
 smaller_int = int(input("Integer smaller than integer 1: "))
@@ -75,7 +75,7 @@ for i in range(1,length+1):
     for j in range(1,width):
         print(pattern, end="")
     print(pattern)
-'''
+
 #10
 user_input = ""
 done = False
@@ -85,7 +85,16 @@ while not done:
         done = True
     else:
         if user_input % 2 == 0:
-            user_input == #greatest even number
+            user_input == 7
         else:
             user_input == -1     
 print(user_input)
+
+#11
+total = 0
+user_input = int(input("Enter a positive integer: "))
+for number in range(1,user_input+1):
+    total == (user_input ** 2) + total
+print(total)
+
+
