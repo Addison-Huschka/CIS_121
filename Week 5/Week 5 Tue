@@ -25,7 +25,16 @@ def count_vowels(word):
         else: 
             continue
     print(f'The amount of vowels in {word} is {count}')
-    return
-count_vowels("Hello world")
-count_vowels("apples and bananas")
-count_vowels("happy times")
+    return count
+    
+word1 = "Hello world"
+word2 = "apples and bananas"
+word3 = "happy times"
+count_vowels(word1)
+count_vowels(word2)
+count_vowels(word3)
+vowel1 = count_vowels(word1)
+vowel2 = count_vowels(word2)
+vowel3 = count_vowels(word3)
+total_vowel = vowel1 + vowel2 + vowel3
+print(f'the total vowels seen so far is {total_vowel}')
