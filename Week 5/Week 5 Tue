@@ -1,0 +1,9 @@
+word = "Hello World!"
+
+count = 0
+for letter in word:
+    count += 1
+print(count)
+
+for x in range(0,len(word)):
+    print(x)
