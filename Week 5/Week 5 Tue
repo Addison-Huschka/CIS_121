@@ -6,15 +6,26 @@ for letter in word:
 print(count)
 
 for x in range(0,len(word)):
-    print(x)'''
+    print(x)
 
 count = 0
-word1 = "hello world"
-word2 = "apples and bananas"
-word3 = "happy times"
-#word = str(input("Enter a word: "))
-for letter in word1[0:len(word1)]:
+word = str(input("Enter a word: "))
+for letter in word[0:len(word)]:
     if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u" or letter == "A" or letter == "E" or letter == "I" or letter == "O" or letter == "U":
         count += 1
     else: 
         continue
+print(count)
+'''
+def count_vowels(word):
+    count = 0
+    for letter in word:
+        if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u" or letter == "A" or letter == "E" or letter == "I" or letter == "O" or letter == "U":
+            count += 1
+        else: 
+            continue
+    print(f'The amount of vowels in {word} is {count}')
+    return
+count_vowels("Hello world")
+count_vowels("apples and bananas")
+count_vowels("happy times")
