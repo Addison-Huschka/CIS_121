@@ -24,4 +24,5 @@ def product(num1, num2):
     result = num1 * num2
     return result
 x = product(3,4)
-print(x)
+#print(x)
+
