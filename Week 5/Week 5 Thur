@@ -1,6 +1,6 @@
 def calculation(integer):
     integer += 2
     integer *= 4
-    print(integer) 
+    print(integer)
 calculation(10)
 calculation(48)
