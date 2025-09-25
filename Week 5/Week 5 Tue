@@ -1,4 +1,4 @@
-'''word = "Hello World!"
+word = "Hello World!"
 
 count = 0
 for letter in word:
@@ -16,7 +16,7 @@ for letter in word[0:len(word)]:
     else: 
         continue
 print(count)
-'''
+
 def count_vowels(word):
     count = 0
     for letter in word:
