@@ -34,5 +34,5 @@ for word in lyst:
     print(word)
 
 print(lyst)    
-lyst.append(12)
+lyst.insert(1,12)
 print(lyst)
