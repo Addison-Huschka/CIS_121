@@ -28,3 +28,8 @@ x = product(3,4)
 
 lyst = ["apple", "banana", 3, False, 4.5, "grapes"]
 print(lyst[1])
+print(lyst[2:5])
+print(lyst[5][2:4])
+for word in lyst:
+    print(word)
+    
