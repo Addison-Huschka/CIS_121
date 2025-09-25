@@ -26,3 +26,5 @@ def product(num1, num2):
 x = product(3,4)
 #print(x)
 
+lyst = ["apple", "banana", 3, False, 4.5, "grapes"]
+print(lyst[1])
