@@ -26,7 +26,6 @@ def count_vowels(word):
             continue
     print(f'The amount of vowels in {word} is {count}')
     return count
-    
 word1 = "Hello world"
 word2 = "apples and bananas"
 word3 = "happy times"
