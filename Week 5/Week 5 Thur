@@ -32,4 +32,7 @@ print(lyst[2:5])
 print(lyst[5][2:4])
 for word in lyst:
     print(word)
-    
+
+print(lyst)    
+lyst.append(12)
+print(lyst)
