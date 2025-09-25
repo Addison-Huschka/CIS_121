@@ -4,4 +4,24 @@ def calculation(integer):
     return integer
 result1 = calculation(10)
 result2 = calculation(result1)
-print(result2)
+#print(result2)
+
+def power_2(number):
+    number **= 2
+    return number
+#print(power_2(power_2(3)))
+
+def times_2(number):
+    number *= 2
+    return number
+
+result = 5
+for number in range(0,10):
+    result = times_2(result)
+#print(result)
+
+def product(num1, num2):
+    result = num1 * num2
+    return result
+x = product(3,4)
+print(x)
