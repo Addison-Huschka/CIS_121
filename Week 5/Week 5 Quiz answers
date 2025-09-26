@@ -101,7 +101,7 @@ def cone_volume(radius, height):
     volume = math.pi*(((radius**2)*height)/3)
     return(f'{volume:.2f}')
 print(cone_volume(3,3))
-'''
+
 #3
 def total_score(two_pointers,three_pointers):
     two_pointers *= 2
@@ -109,3 +109,19 @@ def total_score(two_pointers,three_pointers):
     score = two_pointers + three_pointers
     return score
 print(total_score(10,10))
+
+#4
+def total_score(aces,winning_shots):
+    aces *= 2
+    score = aces + winning_shots
+    return score
+print(total_score(2,3))
+'''
+#5
+def leg_counter(chickens,cows,pigs):
+    chickens *= 2
+    cows *= 4
+    pigs *= 4
+    legs = chickens + cows + pigs
+    return legs
+print(leg_counter(4,3,2))
