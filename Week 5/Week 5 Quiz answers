@@ -176,7 +176,7 @@ def pool_time(grade,time):
             pool_time = "3PM"
     return pool_time
 print(pool_time("k","morning"))
-'''
+
 #9
 def traffic_light(light_color):
     if light_color == "green" or light_color == "Green":
@@ -187,3 +187,6 @@ def traffic_light(light_color):
         action = "Stop"
     return action
 print(traffic_light("Green"))
+''' 
+#11
+
