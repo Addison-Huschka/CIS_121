@@ -125,7 +125,7 @@ def leg_counter(chickens,cows,pigs):
     legs = chickens + cows + pigs
     return legs
 print(leg_counter(4,3,2))
-'''
+
 #6
 def battery_counter(dolls,cars,dogs):
     dolls *= 2
@@ -134,3 +134,46 @@ def battery_counter(dolls,cars,dogs):
     total = dolls + cars + dogs
     return total
 print(battery_counter(4,3,2))
+
+#7
+def resting_rate(age,athl_goal):
+    if 20 <= age <=39:
+        if athl_goal == "Above Average":
+            heart_rate = "47-72"
+        else:
+            heart_rate = "73-93"
+    elif 40 <= age <=59:
+        if athl_goal == "Above Average":
+            heart_rate = "46-71"
+        else:
+            heart_rate = "72-94"
+    elif 60 <= age <=79:
+        if athl_goal == "Above Average":
+            heart_rate = "45-70"
+        else:
+            heart_rate = "71-97"
+    return heart_rate
+print(resting_rate(45,"Below Average"))
+'''
+#8
+def pool_time(grade,time):
+    if grade.lower() == "k":
+        grade = 0
+        
+    if 0 <= int(grade) <=3:
+        if time == "morning":
+            pool_time = "9AM"
+        else:
+            pool_time = "1PM"
+    elif 4 <= int(grade) <=8:
+        if time == "morning":
+            pool_time = "10AM"
+        else:
+            pool_time = "2PM"
+    elif 9 <= int(grade) <=12:
+        if time == "morning":
+            pool_time = "11AM"
+        else:
+            pool_time = "3PM"
+    return pool_time
+print(pool_time("k","morning"))
