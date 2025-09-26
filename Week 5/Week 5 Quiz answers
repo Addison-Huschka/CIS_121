@@ -1,8 +1,12 @@
-#1
-def fever(temp):
+'''#1
+def reverse_string(word):
+    return(word[0:])
+print(reverse_string("hello"))
+
+def is_fever(temp):
     temp
 
-'''
+
 1. The normal human body temperature is 98.6F in Fahrenheit and 37C in Celsuis. Create a function
 that determines if the temp is considered a fever(anove normal body temperature) or not. temp will
 be measured in Fahrenheit and Celsuis.
@@ -82,3 +86,26 @@ Examples:
  flip flop(” abcde”)→” decab” (that is,” de” then” c” then” ab” . . . odd length)
  flip flop(” cranberries”)→” rriesecranb” (that is,” rries” then” e” then” cranb” . . . odd length)
 '''
+
+
+
+'''#1 
+def pyramid_volume(base,height):
+    volume = ((base**2)*height)/3
+    return (f'{volume:.2f}')
+print(pyramid_volume(3,4))
+
+#2
+import math
+def cone_volume(radius, height):
+    volume = math.pi*(((radius**2)*height)/3)
+    return(f'{volume:.2f}')
+print(cone_volume(3,3))
+'''
+#3
+def total_score(two_pointers,three_pointers):
+    two_pointers *= 2
+    three_pointers *= 3
+    score = two_pointers + three_pointers
+    return score
+print(total_score(10,10))
