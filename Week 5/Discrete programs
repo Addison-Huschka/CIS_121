@@ -1,6 +1,32 @@
+#1
 def division_algorithm(A,B):
     q = 0
     while A-(B*q) >= B:
         q += 1
     return(q,(A-(B*q)))
-print(division_algorithm(9,5))
+print(division_algorithm(36,7))
+
+#2
+def euclidean_algorithm(A,B):
+    Rs = [A,B]
+    while Rs[1] > 0:
+        r0 = Rs[1]
+        r1 = division_algorithm(Rs[0], r0)[1]
+        Rs = [r0,r1]
+    return Rs[0]
+print(euclidean_algorithm(4,16))
+
+#4
+def Berlekamp_algorithm(A,B):
+    Rs = [A,B]
+    Ps = [0,1]
+    Qs = [1,0]
+    while Rs[1] > 0:
+        r0 = Rs[1]
+        (ak, rk) = division_algorithm(Rs[0], r0)
+        Rs = [Rs[1], rk]
+        Ps = [Ps[1], (ak*Ps[1]) + Ps[0]]
+        Qs = [Qs[1], (ak*Qs[1])+Qs[0]]
+    sign = (Qs[1]*Ps[0]) - (Ps[1]*Qs[0])
+    return (Rs[0], -sign * Qs[0], sign*Ps[0])
+print(Berlekamp_algorithm(97,20))
