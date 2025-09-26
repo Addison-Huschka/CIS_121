@@ -116,7 +116,7 @@ def total_score(aces,winning_shots):
     score = aces + winning_shots
     return score
 print(total_score(2,3))
-'''
+
 #5
 def leg_counter(chickens,cows,pigs):
     chickens *= 2
@@ -125,3 +125,12 @@ def leg_counter(chickens,cows,pigs):
     legs = chickens + cows + pigs
     return legs
 print(leg_counter(4,3,2))
+'''
+#6
+def battery_counter(dolls,cars,dogs):
+    dolls *= 2
+    cars *= 4
+    dogs *= 6
+    total = dolls + cars + dogs
+    return total
+print(battery_counter(4,3,2))
