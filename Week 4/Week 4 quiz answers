@@ -1,4 +1,4 @@
-#1
+'''#1
 total = 0
 larger_int = int(input("Integer 1: "))
 smaller_int = int(input("Integer smaller than integer 1: "))
@@ -96,5 +96,9 @@ user_input = int(input("Enter a positive integer: "))
 for number in range(1,user_input+1):
     total == (user_input ** 2) + total
 print(total)
-
-
+'''
+height = int(input("Enter height: "))
+for i in range(height):
+    for j in range(i+1):
+        print("*", end= "")
+    print()
