@@ -154,12 +154,11 @@ def resting_rate(age,athl_goal):
             heart_rate = "71-97"
     return heart_rate
 print(resting_rate(45,"Below Average"))
-'''
+
 #8
 def pool_time(grade,time):
     if grade.lower() == "k":
         grade = 0
-        
     if 0 <= int(grade) <=3:
         if time == "morning":
             pool_time = "9AM"
@@ -177,3 +176,14 @@ def pool_time(grade,time):
             pool_time = "3PM"
     return pool_time
 print(pool_time("k","morning"))
+'''
+#9
+def traffic_light(light_color):
+    if light_color == "green" or light_color == "Green":
+        action = "Go"
+    elif light_color == "yellow" or light_color == "Yellow":
+        action = "Yield"
+    elif light_color == "red" or "Red":
+        action = "Stop"
+    return action
+print(traffic_light("Green"))
