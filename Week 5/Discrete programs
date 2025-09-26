@@ -1,0 +1,6 @@
+def division_algorithm(A,B):
+    q = 0
+    while A-(B*q) >= B:
+        q += 1
+    return(q,(A-(B*q)))
+print(division_algorithm(9,5))
