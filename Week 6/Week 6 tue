@@ -4,9 +4,11 @@ def string_to_list(word):
     words = []
     found_word = ""
     for index in range(len(word)):
-            if word[index] == " " or word[index] == word[-1]:
+            if word[index] == " ":
                 words.append(found_word)
                 found_word = ""
+            elif index == len(word)-1:
+                words.append(found_word)
             else:
                 found_word += word[index]
     return words
