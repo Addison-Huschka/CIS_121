@@ -186,7 +186,33 @@ def traffic_light(light_color):
     elif light_color == "red" or "Red":
         action = "Stop"
     return action
-print(traffic_light("Green"))
-''' 
+print(traffic_light("green"))
+ 
+#10
+def access_rights(user_role):
+    if user_role == "user":
+        access = "limited"
+    elif user_role == "guest":
+        access = "view"
+    elif user_role == "admin":
+        access = "full"
+    return access
+print(access_rights("user"))
+'''
 #11
+def convert_knuts(knuts):
+    output = ""
+    galleons = knuts // 493
+    remaining_knuts = knuts - (galleons * 493)
+    sickle = remaining_knuts // 29
+    remaining_knuts = remaining_knuts - (sickle * 29)
+    if galleons > 0:
+        output += f"{galleons} galleons "
+    if sickle > 0:
+        output += f"{sickle} sickles "
+    if remaining_knuts > 0:
+        output += f"{remaining_knuts} knuts "
+    return output
+knuts_input = int(input("Enter the number of knuts: "))
+print(convert_knuts(knuts_input))
 
