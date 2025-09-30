@@ -1,1 +1,13 @@
-lyst = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+my_word = "Peter Piper picked a peck of pickled peppers"
+def string_to_list(word):
+    #word += " "
+    words = []
+    found_word = ""
+    for index in range(len(word)):
+            if word[index] == " " or word[index] == word[-1]:
+                words.append(found_word)
+                found_word = ""
+            else:
+                found_word += word[index]
+    return words
+print(string_to_list(my_word))
