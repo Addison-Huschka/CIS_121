@@ -1,95 +1,45 @@
 '''#1
 def reverse_string(word):
-    return(word[0:])
+    reversed_word = word[::-1]
+    return reversed_word
 print(reverse_string("hello"))
 
-def is_fever(temp):
-    temp
+#2
+def is_fever(input_temp):
+    output = False
+    unit = input_temp[-1]
+    temp = int(input_temp[:-1])
+    if unit == "F":
+        if temp > 98.6:
+            output = True
+    elif unit == "C":
+        if temp > 37:
+            output = True
+    return output
+user_input = input("Enter a temp 00F or 00C: ")
+print(f"Is {user_input} a fever? {is_fever(user_input)}")
 
-
-1. The normal human body temperature is 98.6F in Fahrenheit and 37C in Celsuis. Create a function
-that determines if the temp is considered a fever(anove normal body temperature) or not. temp will
-be measured in Fahrenheit and Celsuis.
-Notice: The F or C will always be the last character in the string.
-Examples:
- is fever(” 99F”) → True,
- is fever(” 37C”) → False,
- is fever(” 98F”) → False,
-2. The boiling point of water is 212F in Fahrenheit and 100C in Celsuis. Create a function that
-determines if the temp is considered boiling or not. temp will be measured in Fahrenheit and Celsuis.
-Notice: The F or C will always be the last character in the string.
-Examples:
- is boiling(” 212F”) → True,
- is boiling(” 100C”) → True,
- is boiling(” 0F”) → False,
-3. The hamming distance is the number of characters that differ between two strings.
-To illustrate,
-str1 =” abcbba”
-str2 =” abcbda”
-The hamming distance is 1 since the only difference is the 5th character.
-That is,” b” in str1 vs.” d” in str2.
-Your task: create a function named hamming distance that takes two strings as arguments, and returns
-the hamming distance between the two strings.
-Examples:
- hamming distance(” abcde”,” bcdef”) → 5, since all 5 letters are different.
- hamming distance(” abcdef”,” abcdef”) → 0, since all 6 letters are the same.
- hamming distance(” strong”,” strung”) → 1, since there is only 1 character that is different.
-4. An Isogram is a word that has no duplicate letters. Create a function that takes a string and returns
-either True or False depending on whether or not it is an” isogram”. You may assume words will only
-have lower case letters.
-Examples:
- is isogram(” algorithm”) → True
- is isogram(” password”) → False (multiple of s)
- is isogram(” consecutive”) → False (multiple of c)
- is isogram(” python”) → True
-5. A fruit juice company tags their fruit juices by concatenating the first three letters of the words in
-a flavor’s name, with its capacity. Create a function that creates product IDs for different fruit juices.
-Notice that the first input is a string and the second is an integer.
-Examples:
-1
- get drink ID(” apple”, 500) →” app500”
- get drink ID(” pineapple”, 45) →” pin45”
- get drink ID(” watermelon”, 750) →” wat750”
-6. Reversing the order of words in a sentence can be helpful in text processing. Create a function called
-reverse words that takes the variable sentence (a string) and returns the sentence with its words in
-reversed order.
-Examples:
- reverse words(” programming useful tools”) →” tools useful programming”
- reverse words(” python is a great language”) →” language great is a python”
- reverse words(” hello world”) →” world hello”
-7. Zyra the code mage has hidden a mysterious cipher in reversed messages. You must help Zyra uncover
-the secrets of the digital realm. Create a function called reverse string that takes the variable word
-(a string) and returns the word in reversed order.
-Examples:
- reverse string(” programming”) →” gnimmargorp”
- reverse string(” python”) →” nohtyp”
- reverse string(” hello”) →” olleh”
-8. Professor Dumbledore seeks to decipher powerful encoded spells in the Hogwarts Library, their secrets
-revealed by the first letter of each word. Create a function called f irst letters that takes the variable
-sentence (a string) and returns a string made up of the first letters of each word in the sentence.
-Examples:
- first letters(” wingardium leviosa makes objects float”) →” wlmof”
- first letters(” expecto patronum repels dementors”) →” eprd”
- first letters(” the magic is within you”) →” tmiy”
-9. Severus Snape seeks to harness powerful spells in the Hogwarts Library, you must encode them by
-using the last letter of each word. Create a function called last letters that takes the variable sentence
-(a string) and returns a string made up of the last letters of each word in the sentence.
-Examples:
- last letters(” wingardium leviosa makes objects float”) →” masst”
- last letters(” expecto patronum repels dementors”) →” omss”
- last letters(” the magic is within you”) →” ecsnu”
-10. Write a function called flip flop that takes a string as an argument and returns a new word made up
-of the second half of the word first combined with the first half of the word second.
-Examples:
- flip flop(” abcd”) →” cdab” (that is,” cd” then” ab” . . . even length)
- flip flop(” grapes”) →” pesgra” (that is,” pes” then” gra” . . . even length)
- flip flop(” abcde”)→” decab” (that is,” de” then” c” then” ab” . . . odd length)
- flip flop(” cranberries”)→” rriesecranb” (that is,” rries” then” e” then” cranb” . . . odd length)
+#3
+def is_boiling(input_temp):
+    output = False
+    unit = input_temp[-1]
+    temp = int(input_temp[:-1])
+    if unit == "F":
+        if temp >= 212:
+            output = True
+    elif unit == "C":
+        if temp >= 100:
+            output = True
+    return output
+user_input = input("Enter a temp 000F or 000C: ")
+print(f"Is {user_input} boiling? {is_boiling(user_input)}")
 '''
+#4
+def hamming_distance(str1,str2):
+    return distance
 
-
-
-'''#1 
+'''
+#1 
 def pyramid_volume(base,height):
     volume = ((base**2)*height)/3
     return (f'{volume:.2f}')
@@ -198,7 +148,7 @@ def access_rights(user_role):
         access = "full"
     return access
 print(access_rights("user"))
-'''
+
 #11
 def convert_knuts(knuts):
     output = ""
@@ -216,3 +166,51 @@ def convert_knuts(knuts):
 knuts_input = int(input("Enter the number of knuts: "))
 print(convert_knuts(knuts_input))
 
+#12
+def bronze_coin(bronze):
+    output = ""
+    gold = bronze // 300
+    remaining_bronze = bronze - (gold * 300)
+    silver = remaining_bronze // 20
+    remaining_bronze = remaining_bronze - (silver * 20)
+    if gold > 0:
+        output += f"{gold} gold "
+    if silver > 0:
+        output += f"{silver} silver "
+    if remaining_bronze > 0:
+        output += f"{remaining_bronze} bronze "
+    return output
+bronze_input = int(input("Enter the number of bronze: "))
+print(bronze_coin(bronze_input))
+
+#13
+from random import randint
+value = randint(0,1)
+def coin_flip(guess):
+    if guess == value:
+        output = "Correct!"
+    else:
+        output = "Incorrect!"
+    return output
+user_guess = int(input("Enter 0 for heads and 1 for tails: "))
+print(coin_flip(user_guess))
+
+#14
+from random import randint
+value = randint(0,9)
+def guess_num(guess):
+    if guess == "even":
+        if value % 2 == 0:
+            output = "Correct!"
+        else:
+            output = "Incorrect!"
+    elif guess == "odd":
+        if value % 2 == 1:
+            output = "Correct!"
+        else:
+            output = "Incorrect!"
+    return output
+user_guess = (input("Enter odd or even: "))
+print(guess_num(user_guess))
+'''
+#15
