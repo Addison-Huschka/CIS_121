@@ -33,7 +33,7 @@ def is_boiling(input_temp):
     return output
 user_input = input("Enter a temp 000F or 000C: ")
 print(f"Is {user_input} boiling? {is_boiling(user_input)}")
-'''
+
 #4
 def hamming_distance(str1,str2):
     if len(str1) != len(str2):
@@ -44,6 +44,9 @@ def hamming_distance(str1,str2):
             distance += 1
     return distance
 print(hamming_distance("abcde","bcdef"))
+'''
+#5
+ 
 
 '''
 #1 
