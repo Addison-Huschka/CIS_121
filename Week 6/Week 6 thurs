@@ -1,6 +1,6 @@
-my_word = "Peter Piper picked a peck of pickled peppers"
+my_word = "peter piper picked a peck of pickled peppers"
 
-def string_to_list_vowels(word):
+'''def string_to_list_vowels(word):
     words = []
     built_word = ""
     vowel_count = 0
@@ -9,12 +9,61 @@ def string_to_list_vowels(word):
         if letter == " ":
             if vowel_count >= 2:
                 words.append(built_word)
-                #vowel_count = 0
+            vowel_count = 0
             built_word = ""
         else:
             built_word += letter
             if letter in "aeiou":
                 vowel_count += 1
-    words.append(built_word)
+    if vowel_count >= 2:
+        words.append(built_word)
     return words
 print(string_to_list_vowels(my_word))
+
+def count_letters(word):
+    letter_dictionary = {}
+    for letter in word:
+        if letter in letter_dictionary:
+            letter_dictionary[letter] = letter_dictionary[letter] + 1
+        else: 
+            letter_dictionary[letter] = 1
+    return letter_dictionary
+for key in count_letters(my_word):
+    print(f'{key} -> {count_letters(my_word)[key]}')'''
+
+my_sentence = '''Throughout all four years of high school, I was involved in student government. I applied as a freshman in the 
+fall of 2021. I knew many people who were also applying for student government. There were no elections, just a small entrance 
+assignment to show our commitment. Immediately, I was placed on a homecoming planning committee. I had no idea what was happening, 
+but I quickly realized this was for me. Later that year, I took on my own fundraising project. All of the 9th and 10th grades 
+participated in a fundraising competition, and I helped the school raise over two thousand dollars. This was the biggest thing I 
+did, and I was a freshman at the time. I repeated this project and led other similar initiatives throughout my high school years. 
+I also did a lot of volunteer work and community projects. Student government as a whole had 60-80 people in it every year I was 
+there. I served on the cabinet all four years, which consisted of the people responsible for planning under the executive board. 
+I was never at the top of the ladder, but I put in just as much effort and gained valuable leadership experience. Through this 
+experience, I learned a lot about working in a team, planning events, and being someone others look to. We were divided into 
+committees that organized different events. I was only the leader of a committee a few times, but I worked closely with the group. 
+We had to brainstorm ideas for our projects, and sometimes it was challenging to coordinate the plan. I’ve realized I prefer 
+working alone, but in student government, I had to collaborate with others. We designed setups and plans for homecoming and other 
+events, and we always completed them. I also learned how to plan many events. Our homecoming and winter fundraiser were the biggest, 
+with many individual projects involved. I know how to allocate funds for supplies and turn plans into reality. I’ve called places 
+for donations and searched for the cheapest options on Amazon countless times. I felt most like a leader when people asked for my 
+help. Because I was in student government and many knew it, I was asked about many different things. Younger members asked for 
+assistance with their projects, and people outside the group asked about events or for help hanging signs for their clubs. I felt 
+very recognized, and it made me feel like a true leader. I had to stay informed about what was happening, especially in the fall 
+semester. I aimed to be someone others could go to for help, and I believe I achieved that. I’m proud to have been part of this 
+group and look forward to applying what I’ve learned in the future. This experience taught me many skills, including valuable 
+lessons I can apply in the future. I can demonstrate to employers that I was able to accomplish these things while still in high 
+school. My leadership skills will serve me well in the workplace and in any future leadership roles or activities. I can 
+brainstorm effectively in a group, even though it’s not my favorite, which is very important for my potential career paths. I can 
+also use this leadership knowledge in college, such as joining the student government at MSU or other club councils. Additionally, 
+I have the skills to start my own club if I choose. All of these opportunities are possible because I was part of Century High School’s Student Government.'''
+def word_counter(data):
+    lyst_data = data.split()
+    word_dict = {}
+    for word in lyst_data:
+        if word in word_dict:
+            word_dict[word] += 1
+        else: word_dict[word] = 1
+    return word_dict
+for key in word_counter(my_sentence):
+    print(f'{key} -> {word_counter(my_sentence)[key]}')
