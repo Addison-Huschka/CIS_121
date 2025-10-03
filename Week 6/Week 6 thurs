@@ -56,7 +56,8 @@ lessons I can apply in the future. I can demonstrate to employers that I was abl
 school. My leadership skills will serve me well in the workplace and in any future leadership roles or activities. I can 
 brainstorm effectively in a group, even though it’s not my favorite, which is very important for my potential career paths. I can 
 also use this leadership knowledge in college, such as joining the student government at MSU or other club councils. Additionally, 
-I have the skills to start my own club if I choose. All of these opportunities are possible because I was part of Century High School’s Student Government.'''
+I have the skills to start my own club if I choose. All of these opportunities are possible because I was part of Century High 
+School’s Student Government.'''
 def word_counter(data):
     lyst_data = data.split()
     word_dict = {}
