@@ -73,4 +73,43 @@ def decending_order(num1,num2,num3):
         else: 
             order = [num2, num1, num3]
     return order
-print(decending_order(3,78,23))
+
+#9
+def count(cards):
+    points = 0
+    for item in cards:
+        if item in range(2,6):
+            points += 1
+        elif str(item) in ["10", "j","q","k","a"]:
+            points -= 1
+    return points
+
+#10
+def war(numbers):
+    sum_even = 0
+    sum_odd = 0
+    for number in numbers:
+        if number % 2 == 0:
+            sum_even += number
+        else:
+            sum_odd += number
+    if sum_even > sum_odd:
+        type = "Even"
+    else: 
+        type = "Odd"
+    return type
+
+
+
+#19
+def is_acronym(s,words):
+    combined_letters = ""
+    if len(s) != len(words):
+        return False
+    for word in words: 
+        if word == "":
+            return False
+        combined_letters += word[0]
+    if s != combined_letters:
+        return False
+    return True
