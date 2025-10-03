@@ -45,8 +45,18 @@ def hamming_distance(str1,str2):
     return distance
 print(hamming_distance("abcde","bcdef"))
 '''
-#5
- 
+#9
+def flip_flop(word): 
+    mid = len(word) // 2
+    center = ""
+    first_half = word[0:mid]
+    if len(word) % 2 == 0:
+        second_half = word[mid:]
+    else:
+        center = word[mid:len(word)-mid]
+        second_half = word[mid+1:]
+    return second_half + center + first_half
+print(flip_flop("abcde")) 
 
 '''
 #1 
