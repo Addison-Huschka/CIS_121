@@ -100,7 +100,6 @@ def war(numbers):
     return type
 
 
-
 #19
 def is_acronym(s,words):
     combined_letters = ""
