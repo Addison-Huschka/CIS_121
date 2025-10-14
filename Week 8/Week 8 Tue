@@ -1,1 +1,6 @@
-print("hello world!")
+total = 0
+user_number = input("enter a number or type q to end: ")
+while user_number != "q":
+    total += int(user_number)
+    user_number = input("enter a number or type q to end: ")
+print(total)
