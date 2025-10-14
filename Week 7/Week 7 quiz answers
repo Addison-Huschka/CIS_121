@@ -8,6 +8,16 @@ def is_isogram(word):
     return True
 
 #2
+def find_unique(numbers):
+    unique_number = 0
+    for number in numbers:
+        unique_number ^= number
+    return unique_number
 
-
-
+#3
+def return_unique(numbers):
+    unique_number = 0
+    for number in numbers:
+        unique_number ^= number
+    return unique_number
+print(return_unique([1,9,8,8,7,6,1,6]))
