@@ -33,4 +33,5 @@ def return_unique(numbers):
 #4
 def get_names(names):
     return list(names.values())
-print(get_names({}))
+
+#5
