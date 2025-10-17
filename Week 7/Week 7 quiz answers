@@ -9,15 +9,26 @@ def is_isogram(word):
 
 #2
 def find_unique(numbers):
-    unique_number = 0
-    for number in numbers:
-        unique_number ^= number
-    return unique_number
+    counts = {}
+    for num in numbers:
+        if num in counts:
+            counts[num] += 1
+        else:
+            counts[num] = 1
+    for num, count in counts.items():
+        if count == 1:
+            return num
+print(find_unique([1,1,6,8,3,4,6,8,4]))
 
 #3
 def return_unique(numbers):
-    unique_number = 0
-    for number in numbers:
-        unique_number ^= number
-    return unique_number
-print(find_unique([1,9,8,8,0,6,1,6]))
+    frequency = {}
+    for num in numbers:
+        frequency[num] = frequency.get(num, 0) + 1
+    unique_numbers = []
+    for num, count in frequency.items():
+        if count == 1:
+            unique_numbers.append(num)
+    return unique_numbers
+
+#4
