@@ -34,7 +34,8 @@ def count_duplicates(num_1=0,num_2=0,num_3=0):
         return "There are 2 duplicates"
 
 #4
-
+def find_winners(player1="rock",player2="rock"):
+    
 
 
 
