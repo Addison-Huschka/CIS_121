@@ -23,6 +23,33 @@ def guess(type="even"):
             return "Correct!"
         else:
             return "Incorrect!"
-print(guess())
         
-    
+#3
+def count_duplicates(num_1=0,num_2=0,num_3=0):
+    if num_1 == num_2 and num_1 == num_3 and num_3 == num_2:
+        return "There are 3 duplicates"
+    elif num_1 != num_2 and num_1 != num_3 and num_2 != num_3:
+        return "There are no duplicates"
+    else:
+        return "There are 2 duplicates"
+
+#4
+
+
+
+
+
+
+
+#15
+def is_negative(number):
+    return number < 0
+def is_odd(num):
+    return num % 2 == 1
+def report_negative_odds(values):
+    lyst = []
+    for numbers in values:
+        if is_negative(numbers) == True and is_odd(numbers) == True:
+            lyst.append(numbers)
+    return lyst
+print(report_negative_odds([100,-57,12,1,-36,-15]))
