@@ -1,0 +1,28 @@
+#1 
+from random import randint
+value = randint(0,1)
+def toss_coin(guess=2):
+    if guess ==2:
+        guess = 0
+    if guess == value:
+        return "Correct!"
+    else: 
+        return "Incorrect!"
+    
+#2
+from random import randint
+value = randint(0,9)
+def guess(type="even"):
+    if value % 2 == 0:
+        if type.lower() == "even":
+            return "Correct!"
+        else:
+            return "Incorrect!"
+    elif value % 2 == 1:
+        if type.lower() == "odd":
+            return "Correct!"
+        else:
+            return "Incorrect!"
+print(guess())
+        
+    
