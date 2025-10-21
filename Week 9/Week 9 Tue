@@ -3,3 +3,15 @@ class planet:
         self.name = name
 planet1 = planet("X25")
 planet2 = planet("Z37")
+
+
+class cat:
+    def __init__(self,breed,age,name):
+        self.breed = breed
+        self.age = age
+        self.name = name
+
+cat1 = cat("tabby", 3, "Mocha")
+cat2 = cat("tabby", 1, "Peanut")
+
+print(f'My cat\'s names are {cat1.name} and {cat2.name}.')
