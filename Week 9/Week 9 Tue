@@ -1,0 +1,5 @@
+class planet:
+    def __init__(self,name):
+        self.name = name
+planet1 = planet("X25")
+planet2 = planet("Z37")

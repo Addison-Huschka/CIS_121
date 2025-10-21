@@ -38,7 +38,19 @@ def get_names(names):
 def find_oldest(people):
     oldest_person = max(people, key=people.get)
     return oldest_person
-print(find_oldest({"Emma": 71, "Jack": 45, "Olivia": 2, "Liam": 39}))
+
+#6
+def letter_count(word):
+    count = {}
+    for letter in word:
+        if letter in count:
+            count[letter] += 1
+        else:
+            count[letter] = 1
+    return count
+
+#7
+
 
 #13
 def total_sales(sales):
