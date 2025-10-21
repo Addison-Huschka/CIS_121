@@ -34,10 +34,15 @@ def return_unique(numbers):
 def get_names(names):
     return list(names.values())
 
+#5
+def find_oldest(people):
+    oldest_person = max(people, key=people.get)
+    return oldest_person
+print(find_oldest({"Emma": 71, "Jack": 45, "Olivia": 2, "Liam": 39}))
+
 #13
 def total_sales(sales):
     total = 0
     for sold in sales.values():
         total += sold
     return total
-print(total_sales({"Laptop": 5, "Phone": 10, "Tablet": 3}))
