@@ -1,4 +1,4 @@
-'''#1
+#1
 def fib(n):
     if n == 0:
         return 0
@@ -101,7 +101,7 @@ def kpermutations2(S,k):
             for i in range(k):
                 s = insert_in(a,i,seq)
                 out = out + [s]
-        return out'''
+        return out
 
 #4
 def Snk(n,k):
