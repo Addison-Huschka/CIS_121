@@ -4,9 +4,9 @@
     elif n == 1:
         return 1
     else: 
-        return fib(n-1) + fib(n-2)'''
+        return fib(n-1) + fib(n-2)
 
-'''def tilings(n):
+def tilings(n):
     if n==0:
         return [[]]
     elif n == 1:
@@ -23,7 +23,7 @@
 for i in range(10):
     print(tilings(i))
 for i in range(10):
-    print (len(tilings(i)))'''
+    print (len(tilings(i)))
 
 def C(n,k):
     if n < k:
@@ -47,5 +47,6 @@ def ksubsets(S,k):
         for term in prev:
             out = out + [term.union({a})]
         return out
-a = ksubsets({1,2,3,4,5,6,7,8,9,10,11,12,13,14},7)
-print(len(a))
+a = ksubsets({1,2,3,4,5,6,7,8,9,10,11,12,13,14},7)'''
+
+def 
