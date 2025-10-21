@@ -1,4 +1,5 @@
-'''def fib(n):
+'''#1
+def fib(n):
     if n == 0:
         return 0
     elif n == 1:
@@ -25,6 +26,7 @@ for i in range(10):
 for i in range(10):
     print (len(tilings(i)))
 
+#2
 def C(n,k):
     if n < k:
         return 0
@@ -47,6 +49,92 @@ def ksubsets(S,k):
         for term in prev:
             out = out + [term.union({a})]
         return out
-a = ksubsets({1,2,3,4,5,6,7,8,9,10,11,12,13,14},7)'''
+a = ksubsets({1,2,3,4,5,6,7,8,9,10,11,12,13,14},7)
 
-def 
+#3
+def P1(n,k):
+    if n < k:
+        return 0
+    elif k == 0:
+        return 1
+    else:
+        return n * (P1(n-1,k-1))
+    
+def kpermutations1(S,k):
+    n = len(S)
+    if n < k:
+        return []
+    elif k == 0:
+        return [[]]
+    else:
+        out = []
+        for a in S:
+            T = list(S)
+            T.remove(a)
+            prev = kpermutations1(T,k-1)
+            for seq in prev:
+                out = out + [[a]+seq]
+    return out
+
+def P2(n,k):
+    if n < k:
+        return 0
+    elif k == 0:
+        return 1
+    else:
+        return P2(n-1,k)+(k*(P2(n-1,k-1)))
+    
+def insert_in(a,i,seq):
+    return seq[0:i] + [a] + seq[i:len(seq)]
+def kpermutations2(S,k):
+    n = len(S)
+    if n < k:
+        return []
+    elif k == 0:
+        return [[]]
+    else: 
+        a = S[0]
+        T = S[1:n]
+        out = kpermutations2(T,k)
+        prev = kpermutations2(T,k-1)
+        for seq in prev:
+            for i in range(k):
+                s = insert_in(a,i,seq)
+                out = out + [s]
+        return out'''
+
+#4
+def Snk(n,k):
+    if n < k:
+        return 0
+    elif k == 0 and n > 0:
+        return 0
+    elif k == 0 and n == 0:
+        return 1
+    else:
+        return Snk(n-1,k-1)+(k*(Snk(n-1,k)))
+
+def insert_in(a,i,seq):
+    return seq[0:i] + [a] + seq[i:len(seq)]
+def set_partitions(A,k):
+    n = len(A)
+    if n < k:
+        return []
+    elif k == 0 and n > 0:
+        return []
+    elif k == 0 and n == 0:
+        return [[]]
+    else: 
+        a = A[0]
+        T = A[1:n]
+        out = []
+        prev1 = set_partitions(T,k-1)
+        for seq in prev1:
+            out = out + [[[a]]+seq]
+        prev2 = set_partitions(T,k)
+        for seq in prev2:
+            for i in range(k):
+                news = list(seq)
+                news[i] = insert_in(a,0,news[i])
+                out = out + [news]
+    return out
