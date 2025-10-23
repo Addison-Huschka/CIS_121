@@ -92,7 +92,13 @@ def count_repetitions(elements):
     return count
 
 #12
-
+def items_purchased(store,wallet):
+    items_can_buy = []
+    for prices in store.values():
+        if prices <= wallet:
+            items_can_buy.append()
+    return items_can_buy
+print(items_purchased({"Water": 1, "Apple": 4, "Phone": 999, "Pan": 100},100))
 
 #13
 def total_sales(sales):
