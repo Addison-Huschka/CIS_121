@@ -69,8 +69,8 @@ def add_contents(order):
     for items in order:
         total += order[items]
     return total
-print(dictionary)
-print(add_contents(dictionary))
+
+#10
 
 #13
 def total_sales(sales):
