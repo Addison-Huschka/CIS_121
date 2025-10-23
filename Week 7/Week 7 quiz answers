@@ -71,6 +71,28 @@ def add_contents(order):
     return total
 
 #10
+menu = {}
+menu["burger"] = 10
+menu["fries"] = 4
+menu["soda"] = 3
+def pairs(restaurant):
+    pair = ""
+    for item, price in restaurant.items():
+        pair += (f'{item} cost {price}\n')
+    return pair
+
+#11
+def count_repetitions(elements):
+    count = {}
+    for item in elements:
+        if item in count:
+            count[item] += 1
+        else:
+            count[item] = 1
+    return count
+
+#12
+
 
 #13
 def total_sales(sales):
