@@ -50,7 +50,27 @@ def letter_count(word):
     return count
 
 #7
+def min_grade(exams):
+    lowest_grade = min(exams, key=exams.get)
+    return lowest_grade
 
+#8
+def find_youngest(people):
+    youngest_person = min(people, key=people.get)
+    return youngest_person
+
+#9
+dictionary = {}
+dictionary["Side Salad"] = 6
+dictionary["Chicken Parm"] = 12
+dictionary["Cookie"] = 3
+def add_contents(order):
+    total = 0
+    for items in order:
+        total += order[items]
+    return total
+print(dictionary)
+print(add_contents(dictionary))
 
 #13
 def total_sales(sales):
