@@ -1,0 +1,17 @@
+class Star:
+    def __init__(self,name):
+        self.name = name
+    def get_name(self):
+        return self.name
+    def set_name(self,new_name):
+        self.name = new_name
+        return new_name
+    def __str__(self):
+        return "This is a star (:"
+
+star1 = Star("Polarias")
+name = Star.get_name(star1)
+print(name)
+print(Star.__str__(star1))
+
+    
