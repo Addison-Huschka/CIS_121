@@ -1,0 +1,7 @@
+class PlanetarySystem:
+    def __init__(self,star):
+        self.star = star
+        self.planets = []
+    def add_planet (self, planet):
+        self.planets.append(planet)
+    
