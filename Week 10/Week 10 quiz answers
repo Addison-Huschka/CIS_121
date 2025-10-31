@@ -1,4 +1,4 @@
-#1
+#
 
 
 
@@ -13,6 +13,7 @@ class movies:
         return self.name
     def set_name(self, name):
         self.name = name
+    
     def get_genre(self):
         output = ""
         for genre in self.genre:
@@ -20,11 +21,13 @@ class movies:
         return output
     def set_genre(self, genres):
         self.genre.append(genres)
+    
     def get_duration(self):
         return self.duration
     def set_duration(self,length):
         if 0 <= length <= 10:
             self.duration = length
+    
     def get_spookiness(self):
         return self.spookiness
     def set_spookiness(self,value):
