@@ -1,1 +1,53 @@
 #1
+
+
+
+class movies:
+    def __init__(self):
+        self.name = "unknown"
+        self.genre = []
+        self.spookiness = 0
+        self.duration = 0
+        self.rating = 0
+    def get_name(self):
+        return self.name
+    def set_name(self, name):
+        self.name = name
+    def get_genre(self):
+        output = ""
+        for genre in self.genre:
+            output += f'{genre}'
+        return output
+    def set_genre(self, genres):
+        self.genre.append(genres)
+    def get_duration(self):
+        return self.duration
+    def set_duration(self,length):
+        if 0 <= length <= 10:
+            self.duration = length
+    def get_spookiness(self):
+        return self.spookiness
+    def set_spookiness(self,value):
+        if 0 < value <= 10:
+            self.spookiness = value
+
+    def get_reaction(self):
+        if 0 < self.spookiness < 3:
+            return "You're not scaring me!"
+        elif 3<= self.spookiness < 7:
+            return "This is a bit scary..."
+        elif 7 <= self.spookiness <= 10:
+            return "Oh F*** this is scary!"
+        else:
+            return "idk"
+    
+    def __str__(self):
+        return f'{self.get_name()} is a {self.get_genre()} movie. The duration is {self.get_duration()} hours and the spookiness is {self.get_spookiness()}/10. The audience reaction is: {self.get_reaction()}.'
+    
+
+movie1 = movies()
+movie1.set_name("Scream")
+movie1.set_genre("horrer")
+movie1.set_duration(1.75)
+movie1.set_spookiness(4)
+print(movie1)
