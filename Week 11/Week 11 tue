@@ -1,0 +1,32 @@
+class CatCafe:
+    def __init__(self,name):
+        self.name = name
+        self.cats = []
+    def add_cats(self, cat):
+        self.cats.append(cat)
+    def show_cats(self):
+        for cat in self.cats:
+            print(cat.get_name())
+
+
+class Cat:
+    def __init__(self,name,breed,age):
+        self.name = name
+        self.breed = breed
+        self.age = age
+    def get_name(self):
+        return self.name
+    def get_breed(self):
+        return self.breed
+    def get_age(self):
+        return self.age
+
+    
+cafe1 = CatCafe("Pretty sips")
+
+cat1 = Cat("Mocha","Tabby",3)
+cafe1.add_cats(cat1)
+
+cafe1.show_cats()
+
+cafe1.find_dog("")
