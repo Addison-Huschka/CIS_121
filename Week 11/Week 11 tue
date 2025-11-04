@@ -7,6 +7,10 @@ class CatCafe:
     def show_cats(self):
         for cat in self.cats:
             print(cat.get_name())
+    def remove_cats(self,cat_name):
+        for cat in self.cats:
+            if cat.get_name() == cat_name:
+                self.cats.remove(cat_name)
 
 
 class Cat:
@@ -28,5 +32,5 @@ cat1 = Cat("Mocha","Tabby",3)
 cafe1.add_cats(cat1)
 
 cafe1.show_cats()
-
-cafe1.find_dog("")
+cafe1.remove_cats("Mocha")
+cafe1.show_cats()
