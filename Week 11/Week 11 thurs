@@ -20,9 +20,15 @@ class BankAccount:
         msg = '' 
         msg += f'owner: {self.owner}\nbalance: {self.balance}' 
         return msg 
+    def __add__(self,other):
+        new_owner = f'{self.get_owner()} & {other.get_owner()}'
+        new_balence = self.get_balance() + other.get_balance()
+        print(new_balence)
 
 matt_acc = BankAccount('Matt') 
 matt_acc.deposit(100) 
 matt_acc.deposit(50) 
 
 ashley_acc = BankAccount("Ashley",500)
+
+matt_acc.__add__(ashley_acc)
