@@ -1,0 +1,28 @@
+class BankAccount: 
+    def __init__(self, name, initial_balance = 0): 
+        self.owner = name 
+        self.balance = initial_balance 
+    def deposit(self, value): 
+        self.balance += value 
+    def withdraw(self, value): 
+        if value > self.balance: 
+            print('insufficent funds') 
+        else: 
+            print(f'here is your money: ${value}') 
+            self.balance -= value
+    def get_owner(self): 
+        return self.owner 
+    def get_balance(self): 
+        return self.balance 
+    def set_owner(self, new_owner): 
+        self.owner = new_owner 
+    def __str__(self): 
+        msg = '' 
+        msg += f'owner: {self.owner}\nbalance: {self.balance}' 
+        return msg 
+
+matt_acc = BankAccount('Matt') 
+matt_acc.deposit(100) 
+matt_acc.deposit(50) 
+
+ashley_acc = BankAccount("Ashley",500)
