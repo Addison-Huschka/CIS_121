@@ -1,0 +1,21 @@
+class Student:
+    def __init__(self,name,major):
+        self.name = name
+        self.major = major
+    def get_major(self):
+        return self.major
+    def set_major(self,new_major):
+        self.major = new_major
+    def __str__(self):
+        return f'{self.name} is a student majoring in {self.major}'
+
+class Course:
+    def __init__(self,course_name,course_number):
+        self.name = course_name
+        self.number = course_number
+        self.students = []
+    def get_number(self):
+        return self.number
+    def set_number(self,new_course_number):
+        self.number = new_course_number
+        
