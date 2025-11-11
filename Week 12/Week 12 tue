@@ -1,4 +1,4 @@
-done = False
+'''done = False
 total = 0
 while done == False:
     user_number = input("Enter a number or type done: ")
@@ -6,9 +6,11 @@ while done == False:
         done = True
     else:
         total += int(user_number)
+print(total)'''
 
-print(total)
-
+from random import randint
 new_file = open('numbers.text','w')
 
-new_file.write("Hello World!")
+for index in range(0,100):
+    number = randint(50,250)
+    new_file.write(f'{number}\n')
