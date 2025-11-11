@@ -1,0 +1,14 @@
+done = False
+total = 0
+while done == False:
+    user_number = input("Enter a number or type done: ")
+    if user_number == "done":
+        done = True
+    else:
+        total += int(user_number)
+
+print(total)
+
+new_file = open('numbers.text','w')
+
+new_file.write("Hello World!")
