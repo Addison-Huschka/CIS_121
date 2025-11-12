@@ -14,3 +14,14 @@ new_file = open('numbers.text','w')
 for index in range(0,100):
     number = randint(50,250)
     new_file.write(f'{number}\n')
+new_file.close()
+
+my_file = open('numbers.text', 'r')
+data = my_file.readlines()
+total = 0
+for number in data:
+    total += int(number)
+
+print(total)
+
+
