@@ -1,62 +1,79 @@
 import random
+
 class CaseManager:
     def __init__(self):
-        self.cases = {}
-        self.opened_cases = set()
-    
+        self.cases = {}  # dict: case_number → amount
+        self.opened_cases = set()  # set of opened case numbers
+
     def generate_cases(self):
-        amounts = [0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000, 1000000]
+        amounts = [
+            0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000,
+            5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000,
+            400000, 500000, 750000, 1000000
+        ]
         random.shuffle(amounts)
         self.cases = {i + 1: amt for i, amt in enumerate(amounts)}
 
-    def open_case(self,number):
+    def open_case(self, number):
         if number in self.opened_cases:
-            print(f'Case {number} already opened.')
+            print(f"Case {number} already opened.")
         else:
             self.opened_cases.add(number)
-            print(f'Case {number} contained ${self.cases[number]}')
+            print(f"Case {number} contained ${self.cases[number]:,.2f}")
 
     def remaining_amounts(self):
+        # ✅ Player’s case is not in opened_cases, so it stays included
         return [amt for num, amt in self.cases.items() if num not in self.opened_cases]
-    
 
 def get_bank_offer(case_manager):
     remaining = case_manager.remaining_amounts()
     offer = sum(remaining) / len(remaining)
-    print(f'\nThe banker offers you: ${offer}')
+    print(f"\n💰 The banker offers you: ${offer:,.2f}")
     return offer
 
 def deal_or_no_deal():
-    choice = input("Do you accept the offer? (deal/no deal): ").lower
+    choice = input("Do you accept the offer? (deal/no deal): ").lower()
     return choice == "deal"
 
-def update_leaderboard(player_name,winnings,filename="leaderboard.txt"):
-    with open(filename, "a") as file:
-        file.write(f'{player_name}: ${winnings}')
-
-def show_leaderboard(filename="leaderboard.txt"):
+# ✅ Leaderboard sorted by rank (highest winnings first)
+def update_leaderboard(player_name, winnings, filename="leaderboard.txt"):
+    entries = []
     try:
         with open(filename, "r") as file:
-            entries = []
             for line in file:
-                name, amount = line.strip()
-                entries.append((name, float(amount.replace(",", ""))))
-            entries.sort(key=lambda x: x[1], reverse=True)
-
-            print("\nLeaderboard:")
-            for rank, (name, amount) in enumerate(entries, start=1):
-                print(f'{rank}. {name} - ${amount}')
+                name, amount_str = line.strip().split(": $")
+                entries.append((name, float(amount_str.replace(",", ""))))
     except FileNotFoundError:
-        print(f'\nLeaderboard is empty.')
+        pass
 
-def play_round(case_manager, round_number,cases_to_open):
-    print(f'\nRound {round_number}: Open {cases_to_open} cases(s)')
+    entries.append((player_name, winnings))
+    entries.sort(key=lambda x: x[1], reverse=True)
+
+    with open(filename, "w") as file:
+        for name, amount in entries:
+            file.write(f"{name}: ${amount:,.2f}\n")
+
+# ✅ Show remaining values after each round
+def show_remaining_amounts(case_manager, player_case):
+    remaining = [amt for num, amt in case_manager.cases.items() if num not in case_manager.opened_cases]
+    remaining.append(case_manager.cases[player_case])  # include player’s case
+    remaining_sorted = sorted(remaining)
+
+    print("\n📊 Remaining amounts still in play:")
+    for amt in remaining_sorted:
+        print(f"${amt:,.2f}")
+
+def play_round(case_manager, round_number, cases_to_open, player_case):
+    print(f"\n🔹 Round {round_number}: Open {cases_to_open} case(s)")
     opened_this_round = []
+
     for _ in range(cases_to_open):
         while True:
             try:
-                case_num = int(input("Choose a case to open (1-26): "))
-                if case_num in case_manager.opened_cases:
+                case_num = int(input("Choose a case to open (1–26): "))
+                if case_num == player_case:
+                    print("You cannot open your own case until the end.")
+                elif case_num in case_manager.opened_cases:
                     print("That case is already opened. Try again.")
                 elif case_num < 1 or case_num > 26:
                     print("Invalid case number.")
@@ -65,4 +82,51 @@ def play_round(case_manager, round_number,cases_to_open):
                     opened_this_round.append(case_num)
                     break
             except ValueError:
-                print("please enter a valid number.")
+                print("Please enter a valid number.")
+
+def main():
+    player_name = input("Enter your name: ")
+
+    case_manager = CaseManager()
+    case_manager.generate_cases()
+
+    while True:
+        try:
+            player_case = int(input("Choose your personal case (1–26): "))
+            if player_case < 1 or player_case > 26:
+                print("Invalid case number.")
+            else:
+                print(f"You chose case #{player_case} to keep until the end.")
+                # ✅ Do NOT add player_case to opened_cases
+                break
+        except ValueError:
+            print("Please enter a valid number.")
+
+    round_structure = [6, 5, 4, 3, 2]
+    round_number = 1
+
+    while len(case_manager.opened_cases) < 25:
+        if round_number <= len(round_structure):
+            cases_to_open = round_structure[round_number - 1]
+        else:
+            cases_to_open = 1
+
+        play_round(case_manager, round_number, cases_to_open, player_case)
+        show_remaining_amounts(case_manager, player_case)
+
+        offer = get_bank_offer(case_manager)
+        if deal_or_no_deal():
+            print("You accepted the deal!")
+            update_leaderboard(player_name, offer)
+            return
+        else:
+            print("No deal! Let's continue.")
+        round_number += 1
+
+    print("\n🎉 Only your case remains!")
+    winnings = case_manager.cases[player_case]
+    print(f"Your case #{player_case} contained: ${winnings:,.2f}")
+
+    update_leaderboard(player_name, winnings)
+
+main()
