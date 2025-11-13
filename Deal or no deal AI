@@ -1,0 +1,68 @@
+import random
+class CaseManager:
+    def __init__(self):
+        self.cases = {}
+        self.opened_cases = set()
+    
+    def generate_cases(self):
+        amounts = [0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000, 1000000]
+        random.shuffle(amounts)
+        self.cases = {i + 1: amt for i, amt in enumerate(amounts)}
+
+    def open_case(self,number):
+        if number in self.opened_cases:
+            print(f'Case {number} already opened.')
+        else:
+            self.opened_cases.add(number)
+            print(f'Case {number} contained ${self.cases[number]}')
+
+    def remaining_amounts(self):
+        return [amt for num, amt in self.cases.items() if num not in self.opened_cases]
+    
+
+def get_bank_offer(case_manager):
+    remaining = case_manager.remaining_amounts()
+    offer = sum(remaining) / len(remaining)
+    print(f'\nThe banker offers you: ${offer}')
+    return offer
+
+def deal_or_no_deal():
+    choice = input("Do you accept the offer? (deal/no deal): ").lower
+    return choice == "deal"
+
+def update_leaderboard(player_name,winnings,filename="leaderboard.txt"):
+    with open(filename, "a") as file:
+        file.write(f'{player_name}: ${winnings}')
+
+def show_leaderboard(filename="leaderboard.txt"):
+    try:
+        with open(filename, "r") as file:
+            entries = []
+            for line in file:
+                name, amount = line.strip()
+                entries.append((name, float(amount.replace(",", ""))))
+            entries.sort(key=lambda x: x[1], reverse=True)
+
+            print("\nLeaderboard:")
+            for rank, (name, amount) in enumerate(entries, start=1):
+                print(f'{rank}. {name} - ${amount}')
+    except FileNotFoundError:
+        print(f'\nLeaderboard is empty.')
+
+def play_round(case_manager, round_number,cases_to_open):
+    print(f'\nRound {round_number}: Open {cases_to_open} cases(s)')
+    opened_this_round = []
+    for _ in range(cases_to_open):
+        while True:
+            try:
+                case_num = int(input("Choose a case to open (1-26): "))
+                if case_num in case_manager.opened_cases:
+                    print("That case is already opened. Try again.")
+                elif case_num < 1 or case_num > 26:
+                    print("Invalid case number.")
+                else:
+                    case_manager.open_case(case_num)
+                    opened_this_round.append(case_num)
+                    break
+            except ValueError:
+                print("please enter a valid number.")
