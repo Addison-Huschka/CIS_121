@@ -1,7 +1,7 @@
-from random import randint
+'''from random import randint
 new_file = open('numbers.text','w')
 
-for index in range(0,100000):
+for index in range(0,10000000):
     number = randint(50,250)
     new_file.write(f'{number}\n')
 new_file.close()
@@ -15,5 +15,29 @@ for number in data:
     count += 1
 
 print(total)
-print(total/count)
+print(total/count)'''
+
+new_file = open('family.txt', 'w')
+new_file.write('name,age,occupation,hobby\n')
+new_file.write('Matt,39,Teacher,Running\n')
+new_file.write('Dexter,8,student,Reading\n')
+new_file.write('Addison,38,rock wall staff,climbing\n')
+new_file.close()
+
+my_file = open('family.txt', 'r')
+data = my_file.readlines()
+age_values = []
+for line in data[1:]:
+    line_data = line.split(",")
+    name = line_data[0]
+    age = int(line_data [1])
+    age_values.append(age)
+    occupation = line_data[2]
+    hobby = line_data[3]
+    
+total = 0
+for number in age_values:
+    total += number
+aveage = total / len(age_values)
+print(aveage)
 

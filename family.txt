@@ -1,0 +1,4 @@
+name,age,occupation,hobby
+Matt,39,Teacher,Running
+Dexter,8,student,Reading
+Addison,38,rock wall staff,climbing
