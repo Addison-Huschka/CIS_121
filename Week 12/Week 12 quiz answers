@@ -1,0 +1,41 @@
+class Playlist:
+    def __init__(self,name="New Playlist",songs=[]):
+        self.name = name
+        self.songs = songs
+    def add_song(self,song):
+        self.songs.append(song)
+    def __add__(self,playlist1,playlist2):
+        return playlist1 + playlist2
+    def __str__(self):
+        return f'My playlist is called {self.name} and here is the track list: {self.songs}'
+
+number1 = Playlist("Liked songs",["Radio Ga Ga", "RAWFEAR", "Bully", "505"])
+number2 = Playlist("My Queue",["A New Way To Bleed", "Dream On", "Nobody Can Save Me"])
+
+class RationalNumber:
+    def __init__(self,numerator, denominator):
+        self.a = numerator
+        self.b = denominator
+    def __add__(self,other_fraction):
+        new_numerator = 0
+        new_denominator = 0
+        
+        if self.b == other_fraction.b:
+            new_numerator = self.a + other_fraction.a
+            new_denominator = self.b
+        else:
+            new_denominator = self.b * other_fraction.b
+            new_numerator = (self.a * other_fraction.b) + (other_fraction.a * self.b)
+        return RationalNumber(new_numerator,new_denominator)
+    def __str__(self):
+        return f'{self.a}/{self.b}'
+
+fraction1 = RationalNumber(1,2)
+fraction2 = RationalNumber(1,4)
+fraction3 = fraction1 + fraction2
+print(fraction3)
+      
+    
+
+
+
