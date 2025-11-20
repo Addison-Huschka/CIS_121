@@ -1,16 +1,25 @@
 class Playlist:
-    def __init__(self,name="New Playlist",songs=[]):
+    def __init__(self,name="New Playlist"):
         self.name = name
-        self.songs = songs
+        self.songs = []
     def add_song(self,song):
         self.songs.append(song)
-    def __add__(self,playlist1,playlist2):
-        return playlist1 + playlist2
+    def __add__(self,other):
+        return self.songs + other.songs
     def __str__(self):
         return f'My playlist is called {self.name} and here is the track list: {self.songs}'
 
-number1 = Playlist("Liked songs",["Radio Ga Ga", "RAWFEAR", "Bully", "505"])
-number2 = Playlist("My Queue",["A New Way To Bleed", "Dream On", "Nobody Can Save Me"])
+number1 = Playlist()
+number1.add_song("Radio Ga Ga")
+number1.add_song("RAWFEAR")
+number1.add_song("Bully")
+
+number2 = Playlist("My Queue")
+number2.add_song("A New Way To Bleed")
+number2.add_song("Dream On")
+number2.add_song("Nobody Can Save Me")
+
+combined_playlist = number1 + number2
 
 class RationalNumber:
     def __init__(self,numerator, denominator):
@@ -30,12 +39,35 @@ class RationalNumber:
     def __str__(self):
         return f'{self.a}/{self.b}'
 
-fraction1 = RationalNumber(1,2)
-fraction2 = RationalNumber(1,4)
-fraction3 = fraction1 + fraction2
-print(fraction3)
       
     
+class ShoppingCart:
+    def __init__(self,items=None):
+        self.items = dict(items) if items else {}
+    def add_item(self,product,quantity):
+        if product in self.items:
+            self.items[product] += quantity
+        else:
+            self.items[product] = quantity
+    def __add__(self,other_cart):
+        new_cart = self.items.copy()
+        for product, quantity in other_cart.items.items():
+            if product in new_cart:
+                new_cart[product] += quantity
+            else:
+                new_cart[product] = quantity
+        return new_cart
+    def __str__(self):
+        return f'Shopping Cart Items: {self.items}'
 
+cart1 = ShoppingCart()
+cart1.add_item("apple", 2)
+cart1.add_item("banana", 3)
 
+cart2 = ShoppingCart()
+cart2.add_item("orange", 1)
+cart2.add_item("banana", 2)
 
+combined_cart = cart1 + cart2
+
+print(combined_cart)
