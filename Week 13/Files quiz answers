@@ -1,0 +1,21 @@
+#1
+from random import randint
+new_file = (open("quizints.txt", "w"))
+for number in range(100):
+    new_file.write(f'{randint(50,200)}\n')
+new_file.close()
+
+#2
+new_file = open("thisFile.txt", "w")
+
+
+
+#7
+with open("LibraryVisits.csv", "r") as file:
+    total_days = 0
+    total_visits = 0
+    for each_line in file:
+        items = each_line.split(",")
+        total_days += 1
+        total_visits += int(items[1])
+print(f'Average Visits: {total_visits / total_days}')
