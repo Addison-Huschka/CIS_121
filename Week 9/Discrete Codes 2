@@ -21,9 +21,9 @@ def tilings(n):
         for seq2 in prev2:
             out = out + [[2]+seq2]
         return out
-for i in range(10):
+for i in range(7):
     print(tilings(i))
-for i in range(10):
+for i in range(7):
     print (len(tilings(i)))
 
 #2
@@ -49,7 +49,7 @@ def ksubsets(S,k):
         for term in prev:
             out = out + [term.union({a})]
         return out
-a = ksubsets({1,2,3,4,5,6,7,8,9,10,11,12,13,14},7)
+#a = ksubsets({1,2,3,4,5,6,7,8,9,10,11,12,13,14},7)
 
 #3
 def P1(n,k):
