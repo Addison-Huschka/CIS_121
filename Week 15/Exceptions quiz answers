@@ -30,3 +30,18 @@ while not done:
             user = input("Enter a fruit name: ")
 
 #4
+my_file = open("data.txt", "w")
+my_file.write("Line 1\nLine 2\nLine 3")
+my_file.close()
+user_input = input("Enter a file name: ")
+done = False
+while not done:
+    try:
+        my_file = open(user_input, "r")
+        content = my_file.read()
+        print(content)
+        my_file.close()
+        done = True
+    except FileNotFoundError:
+        print("File not found. Please try again.")
+        user_input = input("Enter a file name: ")
