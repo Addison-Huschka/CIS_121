@@ -1,0 +1,30 @@
+#2
+fruit = ["apple","bannana","cherry","date"]
+user = input("Enter a number between 0 and 3: ")
+done = False
+while not done:
+    try:
+        print(f'You selected {fruit[int(user)]}')
+        done = True
+    except ValueError:
+        print("Please enter a valid number.")
+        user = input("Enter a number between 0 and 3: ")
+    except IndexError:
+        print("Number out of range. Please try again.")
+        user = input("Enter a number between 0 and 3: ")
+
+#3
+fruit = {"apple": 1.5,"bannana": 0.9,"cherry": 2.2}
+user = input("Enter a fruit name: ")
+done = False
+while not done:
+    if user == "":
+        print("Input cannot be empty. Please try again.")
+        user = input("Enter a fruit name: ")
+    else:
+        try:
+            print(f'The price of {user} is ${fruit[user]}')
+            done = True
+        except KeyError:
+            print("Fruit not found. Please try again.")
+            user = input("Enter a fruit name: ")
