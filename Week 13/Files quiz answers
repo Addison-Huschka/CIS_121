@@ -1,4 +1,4 @@
-#1
+'''#1
 from random import randint
 new_file = (open("quizints.txt", "w"))
 for number in range(100):
@@ -18,4 +18,12 @@ with open("LibraryVisits.csv", "r") as file:
         items = each_line.split(",")
         total_days += 1
         total_visits += int(items[1])
-print(f'Average Visits: {total_visits / total_days}')
+print(f'Average Visits: {total_visits / total_days}')'''
+
+lunches = open("LunchData.txt", "r")
+total = 0
+for line in lunches:
+    served = line.split()
+    total += int(served[1])
+print(f'Total Lunches: {total}')
+lunches.close()
